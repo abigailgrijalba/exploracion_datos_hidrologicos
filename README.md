@@ -26,7 +26,7 @@ legend(
   legend = c("Estrella", "Banano"),  
   fill = c("blue", "green"),  
   horiz = FALSE  
-)
+)  
 ![](C:\Users\abbyg\Desktop\Procesamiento de datos geográficos\Grafico 1.png)
 
 #### Ahora bien, se va a ver una estadistica, un promedio, de los caudales diarios de cada rio con la siguiente funcion
