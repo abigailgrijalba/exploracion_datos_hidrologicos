@@ -1,3 +1,11 @@
+![Grafica 5](https://user-images.githubusercontent.com/82826848/119301560-ea8c3f80-bc1f-11eb-8333-649d089b8157.png)
+
+
+
+![Grafico 6](https://user-images.githubusercontent.com/82826848/119301568-ebbd6c80-bc1f-11eb-9847-d26d80dc1403.png)
+![Grafico 7](https://user-images.githubusercontent.com/82826848/119301569-ebbd6c80-bc1f-11eb-8638-6495094720ba.png)
+![Grafico 8](https://user-images.githubusercontent.com/82826848/119301571-ebbd6c80-bc1f-11eb-9dd8-a907087a38d9.png)
+![Grafico 9](https://user-images.githubusercontent.com/82826848/119301572-ec560300-bc1f-11eb-9ba7-a088ff83a602.png)
 # Datos hidrologicos ejercicio explorativo
 #### Se debe de cargar el archivo csv, para tener los datos disponibles para trabajar
 
@@ -27,7 +35,7 @@ legend(
   fill = c("blue", "green"),  
   horiz = FALSE  
 )  
-![](C:/Users/abbyg/Desktop/Procesamiento de datos geográficos/Grafico 1.png)
+![Grafico 1](https://user-images.githubusercontent.com/82826848/119301561-ea8c3f80-bc1f-11eb-9d18-ae17670132d1.png)
 
 #### Ahora bien, se va a ver una estadistica, un promedio, de los caudales diarios de cada rio con la siguiente funcion
 summary(inp[ , 2:3])
@@ -38,11 +46,15 @@ hist(inp[ , 2],
      xlab = 'Cant. de mm por dia',  
      ylab = 'Frecuencia'  
      )  
+![Grafico 2](https://user-images.githubusercontent.com/82826848/119301564-eb24d600-bc1f-11eb-9ddf-03d1e195f5ad.png)     
+  
 hist(inp[ , 3],  
      main = 'Banano',  
      xlab = 'Cant. de mm por dia',  
      ylab = 'Frecuencia'  
      )
+![Grafico 3](https://user-images.githubusercontent.com/82826848/119301565-eb24d600-bc1f-11eb-9d98-e075887277ff.png)
+
 
 #### Para un mayor manejo de la informacion y del trabajo se van a nombrar los encabezados de las columnas
 names(inp) <- c("fecha", "Estrella", "Banano")
@@ -54,6 +66,8 @@ plot(Estrella,
      xlab = 'Fecha',  
      ylab = 'Caudal en mm por dia'  
      )
+![Grafico 4](https://user-images.githubusercontent.com/82826848/119301566-eb24d600-bc1f-11eb-825f-1a515d520ea8.png)
+
 
 #### Se va a crear archivo intermedio, en el que se usara una funcion para especificar el tiempo con el que se trabajara y el formato de las fechas
 Tempdate <- strptime(inp[ , 1], format = "%d/%m/%Y")
