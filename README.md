@@ -14,11 +14,11 @@ inp[!complete.cases(inp), ]
 
 #### A continuacion, se visualizaran rapidamente los datos de las cuencas
 plot(  
-  inp[, 2], type = "l", col = "blue", main = 'Volumen de agua por tiempo',  
+  inp[ , 2], type = "l", col = "blue", main = 'Volumen de agua por tiempo',  
   xlab = 'Fecha',  
   ylab = 'Caudal en mm por dia ',  
       )  
-lines(inp[, 3], col = "green")
+lines(inp[ , 3], col = "green")
 
 legend(  
   x = "topleft",  
@@ -29,15 +29,15 @@ legend(
 )
 
 #### Ahora bien, se va a ver una estadistica, un promedio, de los caudales diarios de cada rio con la siguiente funcion
-summary(inp[, 2:3])
+summary(inp[ , 2:3])
 
 #### Acontinucacion, se van a visualizar los datos estadisticos de ambos caudales
-hist(inp[, 2],  
+hist(inp[ , 2],  
      main = 'Estrella',  
      xlab = 'Cant. de mm por dia',  
      ylab = 'Frecuencia'  
      )  
-hist(inp[, 3],  
+hist(inp[ , 3],  
      main = 'Banano',  
      xlab = 'Cant. de mm por dia',  
      ylab = 'Frecuencia'  
@@ -55,7 +55,7 @@ plot(Estrella,
      )
 
 #### Se va a crear archivo intermedio, en el que se usara una funcion para especificar el tiempo con el que se trabajara y el formato de las fechas
-Tempdate <- strptime(inp[, 1], format = "%d/%m/%Y")
+Tempdate <- strptime(inp[ , 1], format = "%d/%m/%Y")
 
 #### Con esta funcion pasada se especifico que las fechas seran dia/mes/ano, a continuacion, se usaran funciones vectorizadas, funciones tapply anuales
 MAQ_Estrella <- tapply(Estrella, format(Tempdate, format = "%Y"), FUN = sum)  
@@ -89,7 +89,7 @@ MMQ_Banano <- tapply(Banano, format(Tempdate, format = "%m"), FUN = sum)
 
 ### Analisis de correlacion en los datos del archivo csv.
 #### Se usara la funcion "cor" que dara datos de correlacion en el input y se usara el metodo "spearman" ya que distribuira de forma normal los datos y de forma no parametrica
-corinp <- cor(inp[, 2:3], method = "spearman")
+corinp <- cor(inp[ , 2:3], method = "spearman")
 
 #### Ahora se visualizara la Correlacion
 plot(Estrella, Banano,  
