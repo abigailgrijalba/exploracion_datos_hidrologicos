@@ -17,7 +17,7 @@ plot(
   inp[, 2], type = "l", col = "blue", main = 'Volumen de agua por tiempo',  
   xlab = 'Fecha',  
   ylab = 'Caudal en mm por dia ',  
-  )
+      )  
 lines(inp[, 3], col = "green")
 
 legend(  
