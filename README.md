@@ -86,7 +86,8 @@ MMQ_Estrella <- tapply(Estrella, format(Tempdate, format = "%m"), FUN = sum)
 MMQ_Banano <- tapply(Banano, format(Tempdate, format = "%m"), FUN = sum)
 
 
-##### Analisis de correlacion en los datos del archivo csv.
+
+#### Analisis de correlacion en los datos del archivo csv.
 ###### Se usara la funcion "cor" que dara datos de correlacion en el input y se usara el metodo "spearman" ya que distribuira de forma normal los datos y de forma no parametrica
 corinp <- cor(inp[,2:3], method = "spearman")
 
