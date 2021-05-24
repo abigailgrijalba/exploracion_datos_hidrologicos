@@ -1,17 +1,18 @@
 # Datos hidrologicos ejercicio explorativo
-## Se debe de cargar el archivo csv, para tener los datos disponibles para trabajar
+###### Se debe de cargar el archivo csv, para tener los datos disponibles para trabajar
 
 inp <- read.csv("FDC.csv", na.strings = "")
 
-## Con las dos siguientes funciones se visualizaran los encabezados y las dimnesiones
+###### Con las dos siguientes funciones se visualizaran los encabezados y las dimnesiones
 head(inp)
 dim(inp)
 
-## Un ejemplo abreviado de como se podia indagar en un archivo que contiene NA
+######Un ejemplo abreviado de como se podia indagar en un archivo que contiene NA
 inp[!complete.cases(inp),]
-## Como alternativa se puede usar newinp <- na.omit(inp), para eliminar filas con NA
 
-## A continuacion, se visualizaran rapidamente los datos de las cuencas
+###### Como alternativa se puede usar newinp <- na.omit(inp), para eliminar filas con NA
+
+###### A continuacion, se visualizaran rapidamente los datos de las cuencas
 plot(
   inp[,2], type = "l", col = "blue", main = 'Volumen de agua por tiempo',
   xlab = 'Fecha',
