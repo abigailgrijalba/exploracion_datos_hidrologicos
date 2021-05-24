@@ -4,7 +4,7 @@
 inp <- read.csv("FDC.csv", na.strings = "")
 
 ###### Con las dos siguientes funciones se visualizaran los encabezados y las dimnesiones
-head(inp)
+head(inp)  
 dim(inp)
 
 ###### Un ejemplo abreviado de como se podia indagar en un archivo que contiene NA
@@ -13,19 +13,19 @@ inp[!complete.cases(inp),]
 ###### Como alternativa se puede usar newinp <- na.omit(inp), para eliminar filas con NA
 
 ###### A continuacion, se visualizaran rapidamente los datos de las cuencas
-plot(
-  inp[,2], type = "l", col = "blue", main = 'Volumen de agua por tiempo',
-  xlab = 'Fecha',
-  ylab = 'Caudal en mm por dia ',
+plot(  
+  inp[,2], type = "l", col = "blue", main = 'Volumen de agua por tiempo',  
+  xlab = 'Fecha',  
+  ylab = 'Caudal en mm por dia ',  
   )
 lines(inp[,3], col = "green")
 
-legend(
-  x = "topleft",
-  inset = 0.05,
-  legend = c("Estrella", "Banano"),
-  fill = c("blue", "green"),
-  horiz = FALSE
+legend(  
+  x = "topleft",  
+  inset = 0.05,  
+  legend = c("Estrella", "Banano"),  
+  fill = c("blue", "green"),  
+  horiz = FALSE  
 )
 
 ###### Ahora bien, se va a ver una estadistica, un promedio, de los caudales diarios de cada rio con la siguiente funcion
