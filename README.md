@@ -1,4 +1,4 @@
-# Datos hidrológicos ejercicio explorativo
+# Datos hidrológicos, ejercicio explorativo
 #### Se debe de cargar el archivo csv, para tener los datos disponibles para trabajar
 
 inp <- read.csv("FDC.csv", na.strings = "")
