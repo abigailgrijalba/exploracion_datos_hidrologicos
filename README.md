@@ -32,57 +32,57 @@ legend(
 summary(inp[,2:3])
 
 ###### Acontinucacion, se van a visualizar los datos estadisticos de ambos caudales
-hist(inp[,2],
-     main = 'Estrella',
-     xlab = 'Cant. de mm por dia',
-     ylab = 'Frecuencia'
-     )
-hist(inp[,3],
-     main = 'Banano',
-     xlab = 'Cant. de mm por dia',
-     ylab = 'Frecuencia'
+hist(inp[,2],  
+     main = 'Estrella',  
+     xlab = 'Cant. de mm por dia',  
+     ylab = 'Frecuencia'  
+     )  
+hist(inp[,3],  
+     main = 'Banano',  
+     xlab = 'Cant. de mm por dia',  
+     ylab = 'Frecuencia'  
      )
 
 ###### Para un mayor manejo de la informacion y del trabajo se van a nombrar los encabezados de las columnas
 names(inp) <- c("fecha", "Estrella", "Banano")
 
 ###### Con el comando attach se podran evaluar datos en el csv y visualizarlos, por ejemplo:
-attach(inp)
-plot(Estrella,
-     main = 'Rio Estrella',
-     xlab = 'Fecha',
-     ylab = 'Caudal en mm por dia'
+attach(inp)   
+plot(Estrella,  
+     main = 'Rio Estrella',  
+     xlab = 'Fecha',  
+     ylab = 'Caudal en mm por dia'  
      )
 
 ###### Se va a crear archivo intermedio, en el que se usara una funcion para especificar el tiempo con el que se trabajara y el formato de las fechas
 Tempdate <- strptime(inp[,1], format = "%d/%m/%Y")
 
 ###### Con esta funcion pasada se especifico que las fechas seran dia/mes/ano, a continuacion, se usaran funciones vectorizadas, funciones tapply anuales
-MAQ_Estrella <- tapply(Estrella, format(Tempdate, format = "%Y"), FUN = sum)
+MAQ_Estrella <- tapply(Estrella, format(Tempdate, format = "%Y"), FUN = sum)  
 MAQ_Banano <- tapply(Banano, format(Tempdate, format = "%Y"), FUN = sum)
 
 ###### En estas especificamos que para cada rio se va a requerir toda la informacion de los caudales por mm diarias por ano. Ademas, se va a exportar el csv con esa informacion
 write.csv(rbind(MAQ_Estrella, MAQ_Banano), file = "MAQ.csv")
 
 ###### Ahora se van a Visualizar los MAQ (valores anuales de caudal) que se calcularon anteriormente
-plot(
-  MAQ_Banano, ylim = c(0, 3000),
-  main = 'Valores anuales en mm por año',
-  xlab = 'Fechas',
-  ylab = 'Caudal anual en mm'
-  )
+plot(  
+  MAQ_Banano, ylim = c(0, 3000),  
+  main = 'Valores anuales en mm por año',  
+  xlab = 'Fechas',  
+  ylab = 'Caudal anual en mm'  
+  )  
 lines(MAQ_Estrella, col = 2)
 
-legend(
-  x = "topright",
-  inset = 0.05,
-  legend = c("Estrella", "Banano"),
-  fill = c("red", "black"),
-  horiz = FALSE
+legend(  
+  x = "topright",  
+  inset = 0.05,  
+  legend = c("Estrella", "Banano"),  
+  fill = c("red", "black"),  
+  horiz = FALSE  
 )
 
 ###### Se volvera a usar la funcion vectorizada, funciones tapply y esta vez se haran mensuales
-MMQ_Estrella <- tapply(Estrella, format(Tempdate, format = "%m"), FUN = sum)
+MMQ_Estrella <- tapply(Estrella, format(Tempdate, format = "%m"), FUN = sum)  
 MMQ_Banano <- tapply(Banano, format(Tempdate, format = "%m"), FUN = sum)
 
 
