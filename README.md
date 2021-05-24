@@ -1,18 +1,18 @@
-# Datos hidrologicos ejercicio explorativo
+# Datos hidrológicos ejercicio explorativo
 #### Se debe de cargar el archivo csv, para tener los datos disponibles para trabajar
 
 inp <- read.csv("FDC.csv", na.strings = "")
 
-#### Con las dos siguientes funciones se visualizaran los encabezados y las dimnesiones
+#### Con las dos siguientes funciones se visualizarán los encabezados y las dimensiones
 head(inp)  
 dim(inp)
 
-#### Un ejemplo abreviado de como se podia indagar en un archivo que contiene NA
+#### Un ejemplo abreviado de como se podría indagar en un archivo que contiene NA
 inp[!complete.cases(inp), ]
 
 #### Como alternativa se puede usar newinp <- na.omit(inp), para eliminar filas con NA
 
-#### A continuacion, se visualizaran rapidamente los datos de las cuencas
+#### A continuación, se visualizarán rápidamente los datos de las cuencas
 plot(  
   inp[ , 2], type = "l", col = "blue", main = 'Volumen de agua por tiempo',  
   xlab = 'Fecha',  
@@ -29,10 +29,10 @@ legend(
 )  
 ![Grafico 1](https://user-images.githubusercontent.com/82826848/119301561-ea8c3f80-bc1f-11eb-9d18-ae17670132d1.png)
 
-#### Ahora bien, se va a ver una estadistica, un promedio, de los caudales diarios de cada rio con la siguiente funcion
+#### Ahora bien, se va a ver una estadística, un promedio, de los caudales diarios de cada río con la siguiente función
 summary(inp[ , 2:3])
 
-#### Acontinucacion, se van a visualizar los datos estadisticos de ambos caudales
+#### A continuación, se van a visualizar los datos estadísticos de ambos caudales
 hist(inp[ , 2],  
      main = 'Estrella',  
      xlab = 'Cant. de mm por dia',  
@@ -64,7 +64,7 @@ plot(Estrella,
 ![Grafico 4](https://user-images.githubusercontent.com/82826848/119301566-eb24d600-bc1f-11eb-825f-1a515d520ea8.png)
 
 
-#### Se va a crear archivo intermedio, en el que se usara una funcion para especificar el tiempo con el que se trabajara y el formato de las fechas
+#### Se va a crear archivo intermedio, en el que se usara una función para especificar el tiempo con el que se trabajará y el formato de las fechas
 Tempdate <- strptime(inp[ , 1], format = "%d/%m/%Y")
 
 #### Con esta funcion pasada se especifico que las fechas seran dia/mes/ano, a continuacion, se usaran funciones vectorizadas, funciones tapply anuales
