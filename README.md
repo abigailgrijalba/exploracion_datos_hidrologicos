@@ -98,20 +98,20 @@ MMQ_Banano <- tapply(Banano, format(Tempdate, format = "%m"), FUN = sum)
 
 
 
-### Analisis de correlacion en los datos del archivo csv.
+### Analisis de correlación en los datos del archivo csv.
 #### Se usara la funcion "cor" que dara datos de correlacion en el input y se usara el metodo "spearman" ya que distribuira de forma normal los datos y de forma no parametrica
 corinp <- cor(inp[ , 2:3], method = "spearman")
 
-#### Ahora se visualizara la Correlacion
+#### Ahora se visualizará la Correlación
 plot(Estrella, Banano,  
      main = 'Correlacion entre la cuenca del Rio Estrella contra el Rio Banano',  
      )
 
-#### Adicionalmente se creara un modelo de regresion lineal con la funcion de grupo lm, es decir, para relacionar los caudales de ambos rios
+#### Adicionalmente se creará un modelo de regresión lineal con la función de grupo lm, es decir, para relacionar los caudales de ambos rios
 inp.lm <- lm(Estrella ~ Banano, data = inp)  
 summary(inp.lm)
 
-#### Finalmente, se va a visualizar el modelo, que dara como resultado los diagnosticos del analisis y una distribucion empirica relacionando los residuos de las dos variables
+#### Finalmente, se va a visualizar el modelo, que dará como resultado los diagnósticos del análisis y una distribución empírica relacionando los residuos de las dos variables
 plot(inp.lm)
 
 ![Grafico 6](https://user-images.githubusercontent.com/82826848/119301568-ebbd6c80-bc1f-11eb-9847-d26d80dc1403.png)
