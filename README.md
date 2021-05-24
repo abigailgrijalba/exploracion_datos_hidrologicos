@@ -1,11 +1,3 @@
-![Grafica 5](https://user-images.githubusercontent.com/82826848/119301560-ea8c3f80-bc1f-11eb-8333-649d089b8157.png)
-
-
-
-![Grafico 6](https://user-images.githubusercontent.com/82826848/119301568-ebbd6c80-bc1f-11eb-9847-d26d80dc1403.png)
-![Grafico 7](https://user-images.githubusercontent.com/82826848/119301569-ebbd6c80-bc1f-11eb-8638-6495094720ba.png)
-![Grafico 8](https://user-images.githubusercontent.com/82826848/119301571-ebbd6c80-bc1f-11eb-9dd8-a907087a38d9.png)
-![Grafico 9](https://user-images.githubusercontent.com/82826848/119301572-ec560300-bc1f-11eb-9ba7-a088ff83a602.png)
 # Datos hidrologicos ejercicio explorativo
 #### Se debe de cargar el archivo csv, para tener los datos disponibles para trabajar
 
@@ -46,6 +38,7 @@ hist(inp[ , 2],
      xlab = 'Cant. de mm por dia',  
      ylab = 'Frecuencia'  
      )  
+     
 ![Grafico 2](https://user-images.githubusercontent.com/82826848/119301564-eb24d600-bc1f-11eb-9ddf-03d1e195f5ad.png)     
   
 hist(inp[ , 3],  
@@ -53,6 +46,7 @@ hist(inp[ , 3],
      xlab = 'Cant. de mm por dia',  
      ylab = 'Frecuencia'  
      )
+     
 ![Grafico 3](https://user-images.githubusercontent.com/82826848/119301565-eb24d600-bc1f-11eb-9d98-e075887277ff.png)
 
 
@@ -66,6 +60,7 @@ plot(Estrella,
      xlab = 'Fecha',  
      ylab = 'Caudal en mm por dia'  
      )
+     
 ![Grafico 4](https://user-images.githubusercontent.com/82826848/119301566-eb24d600-bc1f-11eb-825f-1a515d520ea8.png)
 
 
@@ -94,7 +89,8 @@ legend(
   legend = c("Estrella", "Banano"),  
   fill = c("red", "black"),  
   horiz = FALSE  
-)
+)  
+![Grafica 5](https://user-images.githubusercontent.com/82826848/119301560-ea8c3f80-bc1f-11eb-8333-649d089b8157.png)
 
 #### Se volvera a usar la funcion vectorizada, funciones tapply y esta vez se haran mensuales
 MMQ_Estrella <- tapply(Estrella, format(Tempdate, format = "%m"), FUN = sum)    
@@ -118,3 +114,7 @@ summary(inp.lm)
 #### Finalmente, se va a visualizar el modelo, que dara como resultado los diagnosticos del analisis y una distribucion empirica relacionando los residuos de las dos variables
 plot(inp.lm)
 
+![Grafico 6](https://user-images.githubusercontent.com/82826848/119301568-ebbd6c80-bc1f-11eb-9847-d26d80dc1403.png)
+![Grafico 7](https://user-images.githubusercontent.com/82826848/119301569-ebbd6c80-bc1f-11eb-8638-6495094720ba.png)
+![Grafico 8](https://user-images.githubusercontent.com/82826848/119301571-ebbd6c80-bc1f-11eb-9dd8-a907087a38d9.png)
+![Grafico 9](https://user-images.githubusercontent.com/82826848/119301572-ec560300-bc1f-11eb-9ba7-a088ff83a602.png)
