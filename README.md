@@ -7,7 +7,7 @@ inp <- read.csv("FDC.csv", na.strings = "")
 head(inp)
 dim(inp)
 
-######Un ejemplo abreviado de como se podia indagar en un archivo que contiene NA
+###### Un ejemplo abreviado de como se podia indagar en un archivo que contiene NA
 inp[!complete.cases(inp),]
 
 ###### Como alternativa se puede usar newinp <- na.omit(inp), para eliminar filas con NA
